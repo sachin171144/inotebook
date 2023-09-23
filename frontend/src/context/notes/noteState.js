@@ -1,5 +1,5 @@
-import { useState } from "react";
-import NoteContext from "./noteContext";
+import { useState } from 'react';
+import NoteContext from './noteContext';
 
 const NoteState = (props) => {
   const host='http://localhost:5000'
@@ -10,10 +10,10 @@ const NoteState = (props) => {
     try {
       // Make the API call to fetch notes
       const response = await fetch(`${host}/api/notes/fetchallnotes`, {
-        method: "GET",
+        method: 'GET',
         headers: {
-          "Content-Type": "application/json",
-          'auth-token': localStorage.getItem('token')
+          'Content-Type': 'application/json',
+          'auth-token': localStorage.getItem('token'),
         },
       });
   
@@ -23,11 +23,11 @@ const NoteState = (props) => {
         setNotes(json);
       } else {
         // Handle error here, e.g., show an error message or log the error
-        console.error("Error fetching notes:", response.status, response.statusText);
+        console.error('Error fetching notes:', response.status, response.statusText);
       }
     } catch (error) {
       // Handle any network or other errors here
-      console.error("Error fetching notes:", error);
+      console.error('Error fetching notes:', error);
     }
   };
   
@@ -36,10 +36,10 @@ const NoteState = (props) => {
   //For Adding Notes
   const addNote = async (title, description, tag) => {
     const response = await fetch(`${host}/api/notes/addnote`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        'Content-Type':"application/json",
-        'auth-token':localStorage.getItem('token')
+        'Content-Type':'application/json',
+        'auth-token':localStorage.getItem('token'),
         
       },
 
@@ -53,17 +53,18 @@ const NoteState = (props) => {
   //For Deleting Notes
   const deleteNote =async (id) => {
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
-        'auth-token':localStorage.getItem('token')
+        'Content-Type': 'application/json',
+        'auth-token':localStorage.getItem('token'),
        
       },
     });
     const json = await response.json();
+    console.log(json);
    
 
-    // console.log("deleted with" + id);
+    // console.log('deleted with' + id);
     const newNotes = notes.filter((note) => {
       return note._id !== id;
     });
@@ -75,17 +76,20 @@ const NoteState = (props) => {
   const editNote = async (id,title,description,tag) => {
     //Api call
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-      method: "PUT",
+      method: 'PUT',
 
       headers: {
-        "Content-Type": "application/json",
-        'auth-token':localStorage.getItem('token')
+        'Content-Type': 'application/json',
+        'auth-token':localStorage.getItem('token'),
         
       },
 
       body: JSON.stringify({title,description,tag}),
+      
     });
-  const json = await response.json();
+    const json = await response.json();
+    xonsole.log(json);
+    
  
 
     //Logic to edit in client

@@ -4,21 +4,22 @@
     "description": "iNotebook - Your notebook on the cloud",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "npm i",
-        "dev": "nodemon index.js"
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "npm run build",
+      "dev": "nodemon index.js"
     },
-    "author": "",
+    "author": "Your Name",
     "license": "ISC",
     "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "cors": "^2.8.5",
-        "express": "^4.17.1",
-        "express-validator": "^6.12.1",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.0.3"
+      "bcryptjs": "^2.4.3",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "express-validator": "^6.12.1",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^6.0.3"
     },
     "devDependencies": {
-        "nodemon": "^2.0.22"
+      "nodemon": "^2.0.22"
     }
-}
+  }
+  

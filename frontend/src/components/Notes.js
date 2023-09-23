@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
+import PropTypes from 'prop-types'; // Import prop-types
 import noteContext from '../context/notes/noteContext';
 import NotesItem from './NotesItem';
 import AddNote from './AddNote';
 import { useNavigate } from 'react-router-dom';
+
 function Notes(props) {
   let navigate = useNavigate();
   const context = useContext(noteContext);
@@ -14,8 +16,7 @@ function Notes(props) {
     } else {
       navigate('/login');
     }
-  }, [getNotes, navigate]); 
-  
+  }, [getNotes, navigate]);
 
   const updateNote = (currentNote) => {
     ref.current.click();
@@ -25,7 +26,6 @@ function Notes(props) {
       edescription: currentNote.description,
       etag: currentNote.tag,
     });
-   
   };
 
   const ref = useRef(null);
@@ -40,8 +40,7 @@ function Notes(props) {
   const handleClick = (e) => {
     e.preventDefault();
     editNote(note.id, note.etitle, note.edescription, note.etag);
-    // console.log('note updating',note);
-    props.showAlert('Updated succesfully','success');
+    props.showAlert('Updated succesfully', 'success');
   };
 
   const onChange = (e) => {
@@ -155,12 +154,22 @@ function Notes(props) {
         </div>
         {notes.map((note) => {
           return (
-            <NotesItem key={note._id} showAlert={props.showAlert} updateNote={updateNote} note={note} />
+            <NotesItem
+              key={note._id}
+              showAlert={props.showAlert}
+              updateNote={updateNote}
+              note={note}
+            />
           );
         })}
       </div>
     </div>
   );
 }
+
+// Add prop validation for showAlert
+Notes.propTypes = {
+  showAlert: PropTypes.func.isRequired,
+};
 
 export default Notes;

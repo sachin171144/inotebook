@@ -1,10 +1,11 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 function Login(props) {
   let navigate = useNavigate();
   const [credentials, setCredentials] = useState({ email: '', password: '' });
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch('http://localhost:5000/api/auth/login', {
@@ -20,18 +21,19 @@ function Login(props) {
     const json = await response.json();
     console.log(json);
     if (json.success) {
-      //redirect
+      // Redirect
       localStorage.setItem('token', json.authtoken);
       navigate('/');
-      props.showAlert('Logged in Sussessfully','success');
-    } else { 
-      props.showAlert('Ivalid mail id or password','danger');
+      props.showAlert('Logged in Successfully', 'success');
+    } else {
+      props.showAlert('Invalid email or password', 'danger');
     }
   };
 
   const onChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
+
   return (
     <div className='container my-3'>
       <h2>Login to access your iNotebook account</h2>
@@ -50,7 +52,7 @@ function Login(props) {
             onChange={onChange}
           />
           <div id='emailHelp' className='form-text'>
-            We'll never share your email with anyone else.
+            We never share your email with anyone else.
           </div>
         </div>
         <div className='mb-3'>
@@ -74,5 +76,9 @@ function Login(props) {
     </div>
   );
 }
+
+Login.propTypes = {
+  showAlert: PropTypes.func.isRequired,
+};
 
 export default Login;

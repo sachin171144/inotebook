@@ -17,20 +17,20 @@ export default function About() {
           <p className='lead mb-4'>
             iNotebook offers a streamlined note-taking experience. With just a
             few clicks, you can create, edit, and categorize your notes. Whether
-            it's jotting down meeting minutes, making to-do lists, or
+            it&apos;s jotting down meeting minutes, making to-do lists, or
             brainstorming creative ideas, iNotebook provides the tools you need
             to keep your thoughts organized and accessible.
           </p>
           <h5>Secure and Accessible Anywhere</h5>
           <p className='lead mb-4'>
-            Your data's security is our priority. iNotebook ensures that your
+            Your data&apos;s security is our priority. iNotebook ensures that your
             notes are stored securely, and you can access them from any device
             with an internet connection. Say goodbye to lost sticky notes and
             disorganized notebooks. With iNotebook, your notes are always at
             your fingertips, making your life more organized and productive.
 
             Start using iNotebook today and experience the convenience of modern
-            note-taking. Whether you're a student, professional, or creative
+            note-taking. Whether you&apos;re a student, professional, or creative
             thinker, iNotebook is here to help you capture and organize your
             ideas effortlessly. Try it out and take your note-taking to the next
             level!

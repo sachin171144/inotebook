@@ -16,12 +16,12 @@ function App() {
       msg:messege,
       type:type,
      
-    })
+    });
     setTimeout(()=>{
       setAlert(null);
     },2000);
   
-  }
+  };
   return (
     <>
       <NoteState>
@@ -31,8 +31,8 @@ function App() {
           <Alert alert={alert}/>
           <div className='container'>
           <Routes>
-            <Route  path='/' element={<Home showAlert={showAlert} />}></Route>
-            <Route  path='/about' element={<About />}></Route>
+            <Route path='/' element={<Home showAlert={showAlert}/>}></Route>
+            <Route path='/about' element={<About />}></Route>
             <Route path='/login' element={<Login showAlert={showAlert}/>}></Route>
             <Route path='/signup' element={<SignUp showAlert={showAlert}/>}></Route>
           </Routes>

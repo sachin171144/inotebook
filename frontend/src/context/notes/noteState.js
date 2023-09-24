@@ -10,7 +10,11 @@ const NoteState = (props) => {
   const getNotes = async () => {
     try {
       // Make the API call to fetch notes
+<<<<<<< HEAD
       const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+=======
+      const response = await fetch('https://inoteboo-b.vercel.app/api/notes/fetchallnotes', {
+>>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -38,7 +42,11 @@ const NoteState = (props) => {
 
   // For Adding Notes
   const addNote = async (title, description, tag) => {
+<<<<<<< HEAD
     const response = await fetch(`${host}/api/notes/addnote`, {
+=======
+    const response = await fetch('https://inoteboo-b.vercel.app/api/notes/addnote', {
+>>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +61,11 @@ const NoteState = (props) => {
 
   // For Deleting Notes
   const deleteNote = async (id) => {
+<<<<<<< HEAD
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+=======
+    const response = await fetch(`https://inoteboo-b.vercel.app/api/notes/deletenote/${id}`, {
+>>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +85,11 @@ const NoteState = (props) => {
   // For Editing Notes
   const editNote = async (id, title, description, tag) => {
     // Api call
+<<<<<<< HEAD
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+=======
+    const response = await fetch(`https://inoteboo-b.vercel.app/api/notes/updatenote/${id}`, {
+>>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
       method: 'PUT',
 
       headers: {

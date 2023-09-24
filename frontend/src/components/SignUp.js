@@ -15,7 +15,11 @@ function SignUp(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = credentials;
+<<<<<<< HEAD
     const response = await fetch('http://localhost:5000/api/auth/createuser', {
+=======
+    const response = await fetch('https://inoteboo-b.vercel.app/api/auth/createuser', {
+>>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

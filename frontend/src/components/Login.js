@@ -8,7 +8,11 @@ function Login(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+<<<<<<< HEAD
     const response = await fetch('http://localhost:5000/api/auth/login', {
+=======
+    const response = await fetch('https://inoteboo-b.vercel.app/api/auth/login', {
+>>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

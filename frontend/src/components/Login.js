@@ -8,7 +8,7 @@ function Login(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('https://inotebook-xi-nine.vercel.app/api/auth/login', {
+    const response = await fetch('https://inoteboo-b.vercel.app/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

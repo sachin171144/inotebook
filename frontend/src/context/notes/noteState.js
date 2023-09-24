@@ -1,24 +1,20 @@
-import React from 'react';
-import { useState } from 'react';
-import NoteContext from './noteContext';
-import PropTypes from 'prop-types';
+import React from "react";
+import { useState } from "react";
+import NoteContext from "./noteContext";
+import PropTypes from "prop-types";
 
 const NoteState = (props) => {
-  const host='http://localhost:5000' 
+  const host = "http://localhost:5000";
   const [notes, setNotes] = useState([]);
 
   const getNotes = async () => {
     try {
       // Make the API call to fetch notes
-<<<<<<< HEAD
       const response = await fetch(`${host}/api/notes/fetchallnotes`, {
-=======
-      const response = await fetch('https://inoteboo-b.vercel.app/api/notes/fetchallnotes', {
->>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
-        method: 'GET',
+        method: "GET",
         headers: {
-          'Content-Type': 'application/json',
-          'auth-token': localStorage.getItem('token'),
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
         },
       });
 
@@ -29,28 +25,24 @@ const NoteState = (props) => {
       } else {
         // Handle error here, e.g., show an error message or log the error
         console.error(
-          'Error fetching notes:',
+          "Error fetching notes:",
           response.status,
           response.statusText
         );
       }
     } catch (error) {
       // Handle any network or other errors here
-      console.error('Error fetching notes:', error);
+      console.error("Error fetching notes:", error);
     }
   };
 
   // For Adding Notes
   const addNote = async (title, description, tag) => {
-<<<<<<< HEAD
     const response = await fetch(`${host}/api/notes/addnote`, {
-=======
-    const response = await fetch('https://inoteboo-b.vercel.app/api/notes/addnote', {
->>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'auth-token': localStorage.getItem('token'),
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
       },
 
       body: JSON.stringify({ title, description, tag }),
@@ -61,15 +53,11 @@ const NoteState = (props) => {
 
   // For Deleting Notes
   const deleteNote = async (id) => {
-<<<<<<< HEAD
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
-=======
-    const response = await fetch(`https://inoteboo-b.vercel.app/api/notes/deletenote/${id}`, {
->>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
-      method: 'DELETE',
+      method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
-        'auth-token': localStorage.getItem('token'),
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
       },
     });
     const json = await response.json();
@@ -85,16 +73,12 @@ const NoteState = (props) => {
   // For Editing Notes
   const editNote = async (id, title, description, tag) => {
     // Api call
-<<<<<<< HEAD
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-=======
-    const response = await fetch(`https://inoteboo-b.vercel.app/api/notes/updatenote/${id}`, {
->>>>>>> f1186bb28fb92ca2db7dc418c6825a1d5af916fb
-      method: 'PUT',
+      method: "PUT",
 
       headers: {
-        'Content-Type': 'application/json',
-        'auth-token': localStorage.getItem('token'),
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem("token"),
       },
 
       body: JSON.stringify({ title, description, tag }),

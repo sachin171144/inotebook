@@ -6,7 +6,9 @@ connectToMongo();
 const app = express();
 const port = 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://inotebook-front.vercel.app',
+}));
 app.use(express.json());
 
 // Available Routes

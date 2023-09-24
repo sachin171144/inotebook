@@ -4,7 +4,7 @@ import NoteContext from './noteContext';
 import PropTypes from 'prop-types';
 
 const NoteState = (props) => {
-  const host = 'http://localhost:5000';
+  const host='http://localhost:5000' 
   const [notes, setNotes] = useState([]);
 
   const getNotes = async () => {

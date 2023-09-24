@@ -4,13 +4,12 @@ import NoteContext from './noteContext';
 import PropTypes from 'prop-types';
 
 const NoteState = (props) => {
-  const host = 'http://localhost:5000';
   const [notes, setNotes] = useState([]);
 
   const getNotes = async () => {
     try {
       // Make the API call to fetch notes
-      const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+      const response = await fetch('https://inotebook-xi-nine.vercel.app//api/notes/fetchallnotes', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -38,7 +37,7 @@ const NoteState = (props) => {
 
   // For Adding Notes
   const addNote = async (title, description, tag) => {
-    const response = await fetch(`${host}/api/notes/addnote`, {
+    const response = await fetch('https://inotebook-xi-nine.vercel.app/api/notes/addnote', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -53,7 +52,7 @@ const NoteState = (props) => {
 
   // For Deleting Notes
   const deleteNote = async (id) => {
-    const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+    const response = await fetch(`https://inotebook-xi-nine.vercel.app/api/notes/deletenote/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +72,7 @@ const NoteState = (props) => {
   // For Editing Notes
   const editNote = async (id, title, description, tag) => {
     // Api call
-    const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+    const response = await fetch(`https://inotebook-xi-nine.vercel.app/api/notes/updatenote/${id}`, {
       method: 'PUT',
 
       headers: {
